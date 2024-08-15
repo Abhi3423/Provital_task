@@ -3,7 +3,6 @@
     display: flex;
     flex-direction: row;
     gap: 5px;
-    width: 50%;
 }
 
 .InnerContainer {
@@ -15,9 +14,9 @@
 
 .imageContainer {
     display: block;
-    border-radius: 10px;
-    width: 200px;
-    height: 200px;
+    border-radius: 20px;
+    width: 280px;
+    height: 380px;
 }
 
 @media screen and (max-width: 768px) {

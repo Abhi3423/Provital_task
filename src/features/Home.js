@@ -10,16 +10,22 @@ function Home() {
     <div>
       <Header />
       <div className={styles.topContainer}>
-        <VerticalCarousel />
 
-        <div className={styles.innerContainer}>
-          <div className={styles.innerContainerHeader}>Book an appointment with
-            <span className={styles.innerContainerColored}>lifestyle medicine</span> experts
+        <div className={styles.item1}><VerticalCarousel /></div>
+
+        <div className={styles.item2}>
+          <div className={styles.innerContainer}>
+            <div className={styles.innerContainerHeader}>
+              <span>Book an appointment with</span>
+              <span>
+                <span className={styles.innerContainerColored}>lifestyle medicine</span> experts
+              </span>
+            </div>
+            <div className={styles.innerContainerFooter}>Optimize your lifestyle and reverse chronic diseases</div>
           </div>
-          <div className={styles.innerContainerFooter}>Optimize your lifestyle and reverse chronic diseases</div>
         </div>
 
-        <SearchBar  className={styles.item3}/>
+        <div className={styles.item3}><SearchBar /></div>
       </div>
     </div>
   )

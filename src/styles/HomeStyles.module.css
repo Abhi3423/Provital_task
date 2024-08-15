@@ -1,23 +1,59 @@
 .topContainer {
     display: flex;
-    flex-direction: row;
-    position: relative;
+    justify-content: space-between;
+    height: 80vh;
+    width: 100%;
 }
+
+.item1 {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0;
+    order: 1;
+    padding-left: 5%;
+    padding-right: 20px;
+}
+
+.item2{
+    flex: 1;
+    order: 3;
+    display: flex;
+    align-items: center;
+    justify-items: start;
+    flex-grow: 1;
+}
+
 
 .innerContainer {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-items: center;
     gap: 20px;
-    width: 50%;
+}
+
+.item3 {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 10;
+    order: 2;
+    width: max-content;
+    border-radius: 10px;
+    margin-top: 35%;
+    margin-left: 20%;
+    left: 0;
+    top: 0;
 }
 
 .innerContainerHeader {
-    font-size: 50px;
+    display: flex;
+    flex-direction: column;
+    font-size: 60px;
     font-weight: 600;
 }
 
 .innerContainerColored {
-    font-size: 50px;
+    font-size: 60px;
     font-weight: 600;
     background: linear-gradient(93.31deg, #1173B3 -34.01%, #0CB9B3 69.91%);
     -webkit-text-fill-color: transparent;
@@ -28,23 +64,50 @@
     color: #707070;
 }
 
-.item3{
-     position: absolute;
-     top: 0;
-     left: 0;
-     right: 0;
-     background-color: rgba(255, 255, 255, 0.8);
-     z-index: 10;
-}
 
-@media (max-width: 768px) {
-    .container {
-      flex-direction: column;
-      position: static; /* Remove the overlay positioning */
+@media screen and (max-width: 768px) {
+    .topContainer {
+        display: flex;
+        flex-direction: column;
+        position: static;
     }
-  
+
+    .item1{
+        order: 3;
+        flex: 0;
+    }
+
+    .item2{
+        padding: 20px;
+        align-items: start;
+        order: 1;
+        flex: 0;
+    }
+
+    .innerContainer{
+        text-align: start;
+        align-items: start;
+    }
+
+    .innerContainerHeader {
+        font-size: 25px;
+    }
+
+    .innerContainerColored {
+        font-size: 25px;
+    }
+    
+
     .item3 {
-      position: static; /* Reset to normal flow */
-      z-index: auto; /* Reset z-index */
+        display: flex;
+        order: 2;
+        position: static;
+        z-index: auto;
+        flex: 0;
+        margin-top: 0%;
+        margin-left: 0%;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
     }
-  }
+}

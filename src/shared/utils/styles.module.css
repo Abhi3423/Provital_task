@@ -18,7 +18,6 @@
   }
 
 .container{
-    width: 100%;
     overflow: hidden;
 }
 
@@ -41,4 +40,11 @@
 	display: flex;
 	width: max-content;
 	animation: none;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+
 }
