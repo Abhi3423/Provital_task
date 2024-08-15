@@ -1,0 +1,41 @@
+.container {
+    padding-top: 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    width: 50%;
+}
+
+.InnerContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+}
+
+.imageContainer {
+    display: block;
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+
+    .InnerContainer {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .imageContainer {
+        display: block;
+        border-radius: 10px;
+        width: 120px;
+        height: 180px;
+    }
+}

@@ -1,0 +1,50 @@
+.topContainer {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.innerContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+}
+
+.innerContainerHeader {
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.innerContainerColored {
+    font-size: 50px;
+    font-weight: 600;
+    background: linear-gradient(93.31deg, #1173B3 -34.01%, #0CB9B3 69.91%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.innerContainerFooter {
+    color: #707070;
+}
+
+.item3{
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     background-color: rgba(255, 255, 255, 0.8);
+     z-index: 10;
+}
+
+@media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      position: static; /* Remove the overlay positioning */
+    }
+  
+    .item3 {
+      position: static; /* Reset to normal flow */
+      z-index: auto; /* Reset z-index */
+    }
+  }

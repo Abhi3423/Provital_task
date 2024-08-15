@@ -1,0 +1,57 @@
+.card {
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: white;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+.cardImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    position: relative;
+}
+
+.cardHeader {
+    position: absolute;
+    bottom: 155px;
+    left: 15px; 
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.overlayIcon {
+    font-size: 24px;
+    color: #4CAF50;
+    margin-right: 8px;
+}
+
+.overlayContent {
+    font-size: 16px;
+    font-weight: bold;
+    color: #8F90A1;
+}
+
+.cardContent {
+    padding: 8px;
+}
+
+.cardTitle {
+    display: flex;
+    align-items: start;
+    font-size: 16px;
+    color: #333;
+}
+
+.cardDescription {
+    font-size: 14px;
+    color: #666;
+    text-align: start;
+}
