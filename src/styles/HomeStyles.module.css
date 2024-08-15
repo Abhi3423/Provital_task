@@ -3,6 +3,7 @@
     justify-content: space-between;
     height: 80vh;
     width: 100%;
+    position: relative;
 }
 
 .item1 {
@@ -12,24 +13,16 @@
     order: 1;
     padding-left: 5%;
     padding-right: 20px;
+    z-index: 2;
 }
 
-.item2{
+.item2 {
     flex: 1;
     order: 3;
     display: flex;
     align-items: center;
-    justify-items: start;
+    justify-content: start;
     flex-grow: 1;
-}
-
-
-.innerContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
-    gap: 20px;
 }
 
 .item3 {
@@ -39,21 +32,39 @@
     order: 2;
     width: max-content;
     border-radius: 10px;
-    margin-top: 35%;
-    margin-left: 20%;
+    margin-top: 28%;
+    margin-left: 30%;
     left: 0;
     top: 0;
+}
+
+.item4 {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(282.8deg, #F0C971 11.7%, #E5688C 63.17%);
+    transform: rotate(-1deg);
+    z-index: 1;
+}
+
+.innerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    gap: 20px;
+    max-width:90%;
 }
 
 .innerContainerHeader {
     display: flex;
     flex-direction: column;
-    font-size: 60px;
+    font-size: 4vw;
     font-weight: 600;
 }
 
 .innerContainerColored {
-    font-size: 60px;
+    font-size: 4vw;
     font-weight: 600;
     background: linear-gradient(93.31deg, #1173B3 -34.01%, #0CB9B3 69.91%);
     -webkit-text-fill-color: transparent;
@@ -69,22 +80,22 @@
     .topContainer {
         display: flex;
         flex-direction: column;
-        position: static;
+        position: relative;
     }
 
-    .item1{
+    .item1 {
         order: 3;
         flex: 0;
     }
 
-    .item2{
+    .item2 {
         padding: 20px;
         align-items: start;
         order: 1;
         flex: 0;
     }
 
-    .innerContainer{
+    .innerContainer {
         text-align: start;
         align-items: start;
     }
@@ -96,18 +107,26 @@
     .innerContainerColored {
         font-size: 25px;
     }
-    
 
     .item3 {
         display: flex;
         order: 2;
-        position: static;
-        z-index: auto;
+        position: relative;
+        z-index: 10;
         flex: 0;
         margin-top: 0%;
         margin-left: 0%;
         align-items: center;
         justify-content: center;
         width: 100%;
+    }
+
+    .item4 {
+        position: absolute;
+        width: 100%;
+        height: 40px;
+        transform: rotate(-1deg);
+        top: 60%;
+        z-index: -1;
     }
 }

@@ -15,8 +15,8 @@
 .imageContainer {
     display: block;
     border-radius: 20px;
-    width: 280px;
     height: 380px;
+    max-width: 300px;
 }
 
 @media screen and (max-width: 768px) {

@@ -27,6 +27,11 @@ function Home() {
 
         <div className={styles.item3}><SearchBar /></div>
       </div>
+      <div className={styles.item4}></div>
+
+      <Carousel/>
+
+      
     </div>
   )
 }

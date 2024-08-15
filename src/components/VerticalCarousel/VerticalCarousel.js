@@ -34,7 +34,7 @@ function VerticalCarousel() {
             {
                 direction == false ?
                     <>
-                        <InfiniteLooper speed={10} direction='bottom'>
+                        <InfiniteLooper speed={20} direction='bottom'>
                             <div className={styles.InnerContainer}>
                                 <img className={styles.imageContainer} src={image4} />
                                 <img className={styles.imageContainer} src={image3} />
@@ -43,7 +43,7 @@ function VerticalCarousel() {
                             </div>
                         </InfiniteLooper>
 
-                        <InfiniteLooper speed={10} direction='top'>
+                        <InfiniteLooper speed={20} direction='top'>
                             <div className={styles.InnerContainer}>
                                 <img className={styles.imageContainer} src={image8} />
                                 <img className={styles.imageContainer} src={image7} />

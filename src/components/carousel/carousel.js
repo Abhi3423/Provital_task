@@ -17,7 +17,7 @@ import SubstanceAbuse from '../../assets/cards/SubstanceAbuse.png'
 function carousel() {
     return (
         <div className={styles.container}>
-            <InfiniteLooper speed={10} direction='right'>
+            <InfiniteLooper speed={30} direction='right'>
                 <div className={styles.InnerContainer}>
                     <Card imageSrc={nutrition}
                         overlayIcon={blueHeart}
