@@ -1,70 +1,75 @@
-import React from 'react'
-import Card from '../cards/card'
-import InfiniteLooper from '../../shared/utils/InfiniteLoop'
-import styles from './styles.module.css'
-import nutrition from '../../assets/cards/Nutrition.png'
-import blueHeart from '../../assets/cards/blueHeart.png'
-import orangeHeart from '../../assets/cards/orangeHeart.png'
-import PhysicalActivity from '../../assets/cards/PhysicalActivity.png'
-import Moon from '../../assets/cards/Moon.png'
-import RestorativeSleep from '../../assets/cards/RestorativeSleep.png'
-import blueSolidHeart from '../../assets/cards/blueSolidHeart.png'
-import StressManagement from '../../assets/cards/StressManagement.png'
-import SocialConnection from '../../assets/cards/SocialConnection.png'
-import Clock from '../../assets/cards/clock.png'
-import SubstanceAbuse from '../../assets/cards/SubstanceAbuse.png'
+import React, { useState, useEffect } from 'react';
+import Card from '../cards/card';
+import styles from './styles.module.css';
+import cardsData from '../../shared/utils/CardsData';
 
-function carousel() {
+function Carousel() {
+    const [selectedIndex, setSelectedIndex] = useState(0);
+    const [translateX, setTranslateX] = useState(0);
+
+    useEffect(() => {
+        setTranslateX(-selectedIndex * 10);
+    }, [selectedIndex]);
+
+    const handleLeftClick = () => {
+        setSelectedIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : cardsData.length - 1));
+    };
+
+    const handleRightClick = () => {
+        setSelectedIndex((prevIndex) => (prevIndex < cardsData.length - 1 ? prevIndex + 1 : 0));
+    };
+
     return (
-        <div className={styles.container}>
-            <InfiniteLooper speed={30} direction='right'>
-                <div className={styles.InnerContainer}>
-                    <Card imageSrc={nutrition}
-                        overlayIcon={blueHeart}
-                        overlayContent={'121/81 mmHg'}
-                        title={'Nutrition'}
-                        description={'Evidence supports the use of a whole food, plant-predominant diet to prevent, treat and reverse chronic illness.'}
-                    />
-
-                    <Card imageSrc={PhysicalActivity}
-                        overlayIcon={orangeHeart}
-                        overlayContent={'121/81 mmHg'}
-                        title={'Physical Activity'}
-                        description={'Regular physical activity is key to managing weight, improving mental health, and reducing risk of chronic disease.'}
-                    />
-
-                    <Card imageSrc={RestorativeSleep}
-                        overlayIcon={Moon}
-                        overlayContent={'121/81 mmHg'}
-                        title={'Restorative sleep'}
-                        description={'Consistent, quality sleep is essential for cognitive function and physical health.'}
-                    />
-
-                    <Card imageSrc={StressManagement}
-                        overlayIcon={blueSolidHeart}
-                        overlayContent={'121/81 mmHg'}
-                        title={'Stress Management'}
-                        description={'Effective stress management techniques are crucial for mental well-being and overall health.'}
-                    />
-
-                    <Card imageSrc={SocialConnection}
-                        overlayIcon={orangeHeart}
-                        overlayContent={'121/81 mmHg'}
-                        title={'Social Connection'}
-                        description={'Strong social connections are associated with a lower risk of many chronic diseases and enhanced mental health.'}
-                    />
-
-                    <Card imageSrc={SubstanceAbuse}
-                        overlayIcon={Clock}
-                        overlayContent={'121/81 mmHg'}
-                        title={'Social Abuse'}
-                        description={'Avoiding tobacco, limiting alcohol use, and abstaining from harmful substances are vital for long-term health.'}
-                    />
-
+        <div className={styles.carouselContainer}>
+            <div className={styles.header}>
+                <div className={styles.main}>HOW IT WORKS</div>
+                <div className={styles.content}>
+                    <div>
+                        <span className={styles.coloredCon}>Lifestyle as medicine:</span>
+                        <span> The six pillars</span>
+                    </div>
+                    <div className={styles.content}>
+                        <div className={styles.circle}>
+                            <button onClick={handleLeftClick} className={styles.arrow}>←</button>
+                        </div>
+                        <div className={styles.circle}>
+                            <button onClick={handleRightClick} className={styles.arrow}>→</button>
+                        </div>
+                    </div>
                 </div>
-            </InfiniteLooper>
+            </div>
+            <div className={styles.titleContainer}>
+                {cardsData.map((card, index) => (
+                    <div
+                        key={index}
+                        className={`${styles.titleBox} ${index === selectedIndex ? styles.active : ''}`}
+                        onClick={() => setSelectedIndex(index)}
+                    >
+                        {card.title}
+                    </div>
+                ))}
+            </div>
+            <div
+                className={styles.cardsContainer}
+                style={{ transform: `translateX(${translateX}%)` }}
+            >
+                {cardsData.map((card, index) => (
+                    <div
+                        key={index}
+                        className={`${styles.card} ${index === selectedIndex ? styles.activeCard : ''}`}
+                    >
+                        <Card
+                            imageSrc={card.imageSrc}
+                            overlayIcon={card.overlayIcon}
+                            overlayContent={card.overlayContent}
+                            title={card.title}
+                            description={card.description}
+                        />
+                    </div>
+                ))}
+            </div>
         </div>
-    )
+    );
 }
 
-export default carousel
+export default Carousel;

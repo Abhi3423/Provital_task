@@ -1,9 +1,95 @@
-.container{
-    padding: 100px 0;
+.carouselContainer {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
 }
 
-.InnerContainer{
+.header {
     display: flex;
-    gap: 20px;
-    padding: 10px;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 1.5vw;
+}
+
+.main {
+    display: flex;
+    align-items: start;
+    color: #707070;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
+    color: #707070;
+    font-style: italic;
+}
+
+.coloredCon {
+    background: linear-gradient(289.5deg, #F1CA72 27.25%, #D96E6C 92.08%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: white;
+    border-color: #C6C6C6;
+    border: solid;
+    border-width: 1px;
+    cursor: pointer;
+}
+
+
+.arrow {
+    color: #707070;
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.titleContainer {
+    display: flex;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+.titleBox {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    color: #707070;
+}
+
+.titleBox.active {
+    background-color: #000;
+    color: #fff;
+}
+
+.cardsContainer {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.card {
+    transition: transform 0.5s ease, opacity 0.5s;
+    border-radius: 10px;
+}
+
+.card.activeCard {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
